@@ -1,8 +1,13 @@
 #!/bin/bash
+echo "--- Starting build process ---"
 
-# Создание библиотеки
-g++ -c src/background_runner.cpp -o src/background_runner.o
-ar rcs libbackground_runner.a src/background_runner.o
 
-# Сборка тестовой программы
-g++ test/main.cpp -L. -lbackground_runner -o test_program
+g++ -Iinclude -o YourProgram test/main.cpp src/background_runner.cpp
+
+
+if [ $? -ne 0 ]; then
+    echo "--- Compilation failed ---"
+    exit 1
+fi
+
+echo "--- Compilation successful ---"
