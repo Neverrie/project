@@ -2,7 +2,7 @@
 echo "--- Starting build process ---"
 
 
-g++ -Iinclude -o YourProgram test/main.cpp src/background_runner.cpp
+g++ -Iinclude -o YourProgram test/main1.cpp src/background_runner.cpp
 
 
 if [ $? -ne 0 ]; then
